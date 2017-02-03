@@ -5,11 +5,11 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name="Pushy",
+    name="PushySDK",
     version="0.1.0",
     author="Rob Kent",
     author_email="jazzycamel@googlemail.com",
-    description=("A very simple Python client for the Pushy notification service API.",),
+    description="A very simple Python client for the Pushy notification service API.",
     license="MIT",
     keywords="Pushy Notification API",
     url="https://github.com/jazzycamel/pushy",

@@ -1,4 +1,4 @@
 {
-  "api_key": "<YOUR_PUSHY_API_KEY>",
-  "device_token": "<YOUR_PUSHY_DEVICE_KEY>"
+  "api_key": "<YOUR_API_KEY>",
+  "device_token": "<YOUR_DEVICE_TOKEN"
 }
