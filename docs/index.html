@@ -3,7 +3,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-    <title>Pushy API documentation</title>
+    <title>PushySDK API documentation</title>
     <meta name="description" content="" />
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
@@ -974,16 +974,16 @@ table {
     <li class="set"><h3><a href="#header-classes">Classes</a></h3>
       <ul>
         <li class="mono">
-        <span class="class_name"><a href="#Pushy.Pushy">Pushy</a></span>
+        <span class="class_name"><a href="#PushySDK.Pushy">Pushy</a></span>
         
           
   <ul>
-    <li class="mono"><a href="#Pushy.Pushy.__init__">__init__</a></li>
-    <li class="mono"><a href="#Pushy.Pushy.deviceInfo">deviceInfo</a></li>
-    <li class="mono"><a href="#Pushy.Pushy.devicePresence">devicePresence</a></li>
-    <li class="mono"><a href="#Pushy.Pushy.makeIOSNotification">makeIOSNotification</a></li>
-    <li class="mono"><a href="#Pushy.Pushy.notificationStatus">notificationStatus</a></li>
-    <li class="mono"><a href="#Pushy.Pushy.push">push</a></li>
+    <li class="mono"><a href="#PushySDK.Pushy.__init__">__init__</a></li>
+    <li class="mono"><a href="#PushySDK.Pushy.deviceInfo">deviceInfo</a></li>
+    <li class="mono"><a href="#PushySDK.Pushy.devicePresence">devicePresence</a></li>
+    <li class="mono"><a href="#PushySDK.Pushy.makeIOSNotification">makeIOSNotification</a></li>
+    <li class="mono"><a href="#PushySDK.Pushy.notificationStatus">notificationStatus</a></li>
+    <li class="mono"><a href="#PushySDK.Pushy.push">push</a></li>
   </ul>
 
         </li>
@@ -1001,11 +1001,11 @@ table {
 
 
   <header id="section-intro">
-  <h1 class="title"><span class="name">Pushy</span> module</h1>
+  <h1 class="title"><span class="name">PushySDK</span> module</h1>
   
   
-  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-Pushy', this);">Show source &equiv;</a></p>
-  <div id="source-Pushy" class="source">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-PushySDK', this);">Show source &equiv;</a></p>
+  <div id="source-PushySDK" class="source">
     <pre><code>import requests, logging, json, collections, six
 from functools import wraps
 
@@ -1111,12 +1111,12 @@ class Pushy(object):
     <h2 class="section-title" id="header-classes">Classes</h2>
       
       <div class="item">
-      <p id="Pushy.Pushy" class="name">class <span class="ident">Pushy</span></p>
+      <p id="PushySDK.Pushy" class="name">class <span class="ident">Pushy</span></p>
       
   
   <div class="source_cont">
-  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-Pushy.Pushy', this);">Show source &equiv;</a></p>
-  <div id="source-Pushy.Pushy" class="source">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-PushySDK.Pushy', this);">Show source &equiv;</a></p>
+  <div id="source-PushySDK.Pushy" class="source">
     <pre><code>class Pushy(object):
     ONE_MONTH=2678400
 
@@ -1188,12 +1188,12 @@ class Pushy(object):
       <div class="class">
           <h3>Ancestors (in MRO)</h3>
           <ul class="class_list">
-          <li><a href="#Pushy.Pushy">Pushy</a></li>
+          <li><a href="#PushySDK.Pushy">Pushy</a></li>
           <li>builtins.object</li>
           </ul>
           <h3>Class variables</h3>
             <div class="item">
-            <p id="Pushy.Pushy.ONE_MONTH" class="name">var <span class="ident">ONE_MONTH</span></p>
+            <p id="PushySDK.Pushy.ONE_MONTH" class="name">var <span class="ident">ONE_MONTH</span></p>
             
 
             
@@ -1205,7 +1205,7 @@ class Pushy(object):
           <h3>Static methods</h3>
             
   <div class="item">
-    <div class="name def" id="Pushy.Pushy.__init__">
+    <div class="name def" id="PushySDK.Pushy.__init__">
     <p>def <span class="ident">__init__</span>(</p><p>self, key)</p>
     </div>
     
@@ -1214,8 +1214,8 @@ class Pushy(object):
   
     <div class="desc"><p>Initialize self.  See help(type(self)) for accurate signature.</p></div>
   <div class="source_cont">
-  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-Pushy.Pushy.__init__', this);">Show source &equiv;</a></p>
-  <div id="source-Pushy.Pushy.__init__" class="source">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-PushySDK.Pushy.__init__', this);">Show source &equiv;</a></p>
+  <div id="source-PushySDK.Pushy.__init__" class="source">
     <pre><code>def __init__(self, key):
     self._key=key
     self._endpoint="https://api.pushy.me/"
@@ -1228,7 +1228,7 @@ class Pushy(object):
   
             
   <div class="item">
-    <div class="name def" id="Pushy.Pushy.deviceInfo">
+    <div class="name def" id="PushySDK.Pushy.deviceInfo">
     <p>def <span class="ident">deviceInfo</span>(</p><p>self, tokens, *args, **kwargs)</p>
     </div>
     
@@ -1236,8 +1236,8 @@ class Pushy(object):
     
   
   <div class="source_cont">
-  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-Pushy.Pushy.deviceInfo', this);">Show source &equiv;</a></p>
-  <div id="source-Pushy.Pushy.deviceInfo" class="source">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-PushySDK.Pushy.deviceInfo', this);">Show source &equiv;</a></p>
+  <div id="source-PushySDK.Pushy.deviceInfo" class="source">
     <pre><code>@_processRequest
 def deviceInfo(self, token):
     params=dict(api_key=self._key)
@@ -1253,7 +1253,7 @@ def deviceInfo(self, token):
   
             
   <div class="item">
-    <div class="name def" id="Pushy.Pushy.devicePresence">
+    <div class="name def" id="PushySDK.Pushy.devicePresence">
     <p>def <span class="ident">devicePresence</span>(</p><p>self, tokens, *args, **kwargs)</p>
     </div>
     
@@ -1261,8 +1261,8 @@ def deviceInfo(self, token):
     
   
   <div class="source_cont">
-  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-Pushy.Pushy.devicePresence', this);">Show source &equiv;</a></p>
-  <div id="source-Pushy.Pushy.devicePresence" class="source">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-PushySDK.Pushy.devicePresence', this);">Show source &equiv;</a></p>
+  <div id="source-PushySDK.Pushy.devicePresence" class="source">
     <pre><code>@_processRequest
 def devicePresence(self, tokens):
     params=dict(api_key=self._key)
@@ -1280,7 +1280,7 @@ def devicePresence(self, tokens):
   
             
   <div class="item">
-    <div class="name def" id="Pushy.Pushy.makeIOSNotification">
+    <div class="name def" id="PushySDK.Pushy.makeIOSNotification">
     <p>def <span class="ident">makeIOSNotification</span>(</p><p>body, badge, sound, title)</p>
     </div>
     
@@ -1288,8 +1288,8 @@ def devicePresence(self, tokens):
     
   
   <div class="source_cont">
-  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-Pushy.Pushy.makeIOSNotification', this);">Show source &equiv;</a></p>
-  <div id="source-Pushy.Pushy.makeIOSNotification" class="source">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-PushySDK.Pushy.makeIOSNotification', this);">Show source &equiv;</a></p>
+  <div id="source-PushySDK.Pushy.makeIOSNotification" class="source">
     <pre><code>@staticmethod
 def makeIOSNotification(body, badge, sound, title):
     return dict(body=body, badge=badge, sound=sound, title=title)
@@ -1301,7 +1301,7 @@ def makeIOSNotification(body, badge, sound, title):
   
             
   <div class="item">
-    <div class="name def" id="Pushy.Pushy.notificationStatus">
+    <div class="name def" id="PushySDK.Pushy.notificationStatus">
     <p>def <span class="ident">notificationStatus</span>(</p><p>self, tokens, *args, **kwargs)</p>
     </div>
     
@@ -1309,8 +1309,8 @@ def makeIOSNotification(body, badge, sound, title):
     
   
   <div class="source_cont">
-  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-Pushy.Pushy.notificationStatus', this);">Show source &equiv;</a></p>
-  <div id="source-Pushy.Pushy.notificationStatus" class="source">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-PushySDK.Pushy.notificationStatus', this);">Show source &equiv;</a></p>
+  <div id="source-PushySDK.Pushy.notificationStatus" class="source">
     <pre><code>@_processRequest
 def notificationStatus(self, pushId):
     params=dict(api_key=self._key)
@@ -1326,7 +1326,7 @@ def notificationStatus(self, pushId):
   
             
   <div class="item">
-    <div class="name def" id="Pushy.Pushy.push">
+    <div class="name def" id="PushySDK.Pushy.push">
     <p>def <span class="ident">push</span>(</p><p>self, tokens, *args, **kwargs)</p>
     </div>
     
@@ -1334,8 +1334,8 @@ def notificationStatus(self, pushId):
     
   
   <div class="source_cont">
-  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-Pushy.Pushy.push', this);">Show source &equiv;</a></p>
-  <div id="source-Pushy.Pushy.push" class="source">
+  <p class="source_link"><a href="javascript:void(0);" onclick="toggle('source-PushySDK.Pushy.push', this);">Show source &equiv;</a></p>
+  <div id="source-PushySDK.Pushy.push" class="source">
     <pre><code>@_processRequest
 def push(self, tokens, data, timeToLive=ONE_MONTH, notification=None, content_available=False):
     params=dict(api_key=self._key)
@@ -1360,7 +1360,7 @@ def push(self, tokens, data, timeToLive=ONE_MONTH, notification=None, content_av
   
           <h3>Instance variables</h3>
             <div class="item">
-            <p id="Pushy.Pushy.endpoint" class="name">var <span class="ident">endpoint</span></p>
+            <p id="PushySDK.Pushy.endpoint" class="name">var <span class="ident">endpoint</span></p>
             
 
             
