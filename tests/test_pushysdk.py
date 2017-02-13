@@ -27,14 +27,14 @@ class TestClass:
         config=getConfig()
         p=PushySDK.Pushy(config['api_key'])
 
-        title="Hello from Python Pushy 😜"
+        title="Hello from Python Pushy"
         message="Hello from Python Pushy"
         badge=1
         sound="ping.aiff"
         notification=PushySDK.Pushy.makeIOSNotification(message, badge, sound, title)
         data=dict(message=message)
 
-        r=p.push(config['device_token_1'], data, notification=notification)
+        r=p.push(config['device_token_1'], data, notification=notification, timeToLive=0)
         assert 'success' in r and r['success']==True
         TestClass.TEST_ID=r['id']
 
@@ -42,14 +42,14 @@ class TestClass:
         config=getConfig()
         p=PushySDK.Pushy(config['api_key'])
 
-        title="Hello from Python Pushy 😜"
+        title="Hello from Python Pushy"
         message="Hello from Python Pushy"
         badge=1
         sound="ping.aiff"
         notification=PushySDK.Pushy.makeIOSNotification(message, badge, sound, title)
         data=dict(message=message)
     
-        r=p.push([config['device_token_1'], config['device_token_2']], data, notification=notification)
+        r=p.push([config['device_token_1'], config['device_token_2']], data, notification=notification, timeToLive=0)
         assert 'success' in r and r['success']==True
         TestClass.TEST_ID=r['id']
 
