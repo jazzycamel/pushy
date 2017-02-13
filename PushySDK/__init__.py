@@ -76,7 +76,7 @@ class Pushy(object):
             payload['content_available']=content_available
 
         if timeToLive is not None:
-            payload['time_to_live']=time_to_live
+            payload['time_to_live']=timeToLive
 
         return requests.post(
             self._endpoint+"push",
