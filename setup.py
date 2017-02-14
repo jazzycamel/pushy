@@ -20,7 +20,7 @@ def read(fname):
 
 setup(
     name="PushySDK",
-    version="0.1.1",
+    version="0.1.2",
     author="Rob Kent",
     author_email="jazzycamel@googlemail.com",
     description="A very simple Python client for the Pushy notification service API.",
