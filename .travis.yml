@@ -9,6 +9,9 @@ before_install:
 - pip install pytest pytest-cov
 install:
 - pip install -r requirements.txt
+- pip install coveralls
 - pip install -e .
 #script: py.test ./tests/test_*.py --cov
-script: python setup.py test
+script: coveralls run --source=PushySDK setup.py test
+after_success:
+  coveralls
