@@ -1,5 +1,19 @@
-import os
+import os,sys
 from setuptools import setup, find_packages
+from setuptools.command.test import test as TestCommand
+
+class PyTest(TestCommand):
+    user_options = [('pytest-args=', 'a', "Arguments to pass to pytest")]
+
+    def initialize_options(self):
+        TestCommand.initialize_options(self)
+        self.pytest_args="./tests/test_pushysdk.py"
+
+    def run_tests(self):
+        import shlex
+        import pytest
+        errno=pytest.main(shlex.split(self.pytest_args))
+        sys.exit(errno)
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
@@ -15,6 +29,8 @@ setup(
     url="https://github.com/jazzycamel/pushy",
     packages=find_packages(exclude=['docs','tests']),
     install_requires=['requests','six'],
+    tests_require=['pytest','pytest-cov'],
+    cmdclass={'test': PyTest},
     long_description=read("README.md"),
     classifiers=[
         "Development Status :: 4 - Beta",
