@@ -1,7 +1,9 @@
-import requests, logging, json, collections, six
+import requests, logging, json, collections, six, logging
 from functools import wraps
 
 if six.PY3: basestring=str
+
+logging.basicConfig()
 
 def _processRequest(fn):
     @wraps(fn)
