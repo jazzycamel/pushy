@@ -18,6 +18,15 @@ class PyTest(TestCommand):
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
+def makeLongDescription(self):
+    return pypandoc.convert_file('README.md', 'rst')
+
+try: long_description=makeLongDescription()
+except OSError:
+    from pypandoc.pandoc_download import download_pandoc
+    download_pandoc()
+    long_description=makeLongDescription()
+
 setup(
     name="PushySDK",
     version="0.1.2",
@@ -31,7 +40,7 @@ setup(
     install_requires=['requests','six'],
     tests_require=['pytest','pytest-cov'],
     cmdclass={'test': PyTest},
-    long_description=pypandoc.convert_file('README.md', 'rst'),
+    long_description=long_description,
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
