@@ -1,7 +1,7 @@
 # PushySDK
 
 [![Build Status](https://travis-ci.org/jazzycamel/pushy.svg?branch=master)](https://travis-ci.org/jazzycamel/pushy)
-[![Coverage Status](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_98.svg)](https://coveralls.io/github/jazzycamel/pushy?branch=master) 
+[![Coverage Status](https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_100.svg)](https://coveralls.io/github/jazzycamel/pushy?branch=master) 
 [![PyPI version](https://badge.fury.io/py/PushySDK.svg)](https://badge.fury.io/py/PushySDK)
 
 A very simple Python client for the Pushy notification service API.

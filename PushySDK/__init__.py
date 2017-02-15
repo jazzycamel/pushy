@@ -27,7 +27,6 @@ def _processRequest(fn):
         self._logger.error("Failed to get {0} for device(s): {1}, with HTTP Status Code: {2}"
             .format(fn.__name__, tokens, request.status_code))
         raise request.raise_for_status()
-        return None 
 
     return wrapper
 
