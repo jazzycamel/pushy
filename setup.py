@@ -1,4 +1,4 @@
-import os,sys
+import os,sys,pypandoc
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
@@ -31,7 +31,7 @@ setup(
     install_requires=['requests','six'],
     tests_require=['pytest','pytest-cov'],
     cmdclass={'test': PyTest},
-    long_description=read("README.md"),
+    long_description=pypandoc.convert_file('README.md', 'rst'),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
