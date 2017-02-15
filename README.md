@@ -21,6 +21,7 @@ $ python setup.py install
 ```
 
 You will need to install the following dependencies:
+
 * requests
 * six
 * pypandoc

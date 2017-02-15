@@ -27,28 +27,38 @@ class MockServerRequestHandler(BaseHTTPRequestHandler):
         qs=urlparse.parse_qs(parsed.query)
         if parsed.path.startswith('/devices'):
             if 'api_key' in qs:
-                code=requests.codes.ok
-                message=json.dumps({
-                    'presence': {
-                        'online': True,
-                        'last_active': {
-                            'date': 1464006925,
-                            'seconds_ago': 215
-                        }
-                    },
-                    'device': {
-                        'platform': 'android',
-                        'date': 1445207358
-                    },
-                    'pending_notifications':[
-                        {
-                            'date': 1464008196,
-                            'id': '5742fe0407c3674e226892f9',
-                            'payload': {'message': 'Hello World!'},
-                            'expiration': 1466600196
-                        }
-                    ]
-                })
+                if 'device_token_' not in parsed.path:
+                    code=404
+                    message=json.dumps({"error":"We could not find a device with that token linked to your account."})
+                elif 'device_token_ok_fail' in parsed.path:
+                    code=requests.codes.ok
+                    message=json.dumps({"error":"We could not find a device with that token linked to your account."})
+                elif 'device_token_bad_json' in parsed.path:
+                    code=requests.codes.ok
+                    message="{"
+                else:
+                    code=requests.codes.ok
+                    message=json.dumps({
+                        'presence': {
+                            'online': True,
+                            'last_active': {
+                                'date': 1464006925,
+                                'seconds_ago': 215
+                            }
+                        },
+                        'device': {
+                            'platform': 'android',
+                            'date': 1445207358
+                        },
+                        'pending_notifications':[
+                            {
+                                'date': 1464008196,
+                                'id': '5742fe0407c3674e226892f9',
+                                'payload': {'message': 'Hello World!'},
+                                'expiration': 1466600196
+                            }
+                        ]
+                    })
         elif parsed.path.startswith('/pushes'):
             if 'api_key' in qs:
                 code=requests.codes.ok
@@ -112,8 +122,6 @@ class TestClass(object):
 
     @classmethod
     def setup_class(cls):
-        print("SETUP")
-
         cls._pushy=PushySDK.Pushy('api_key')
 
         cls._port=MockServerRequestHandler.getFreePort()
@@ -168,3 +176,14 @@ class TestClass(object):
         r=self._pushy.notificationStatus(TestClass.TEST_ID)
         assert r is not None
         assert 'push' in r
+
+    def test_eight(self):
+        try: r=self._pushy.deviceInfo("bad_token")
+        except requests.exceptions.HTTPError: assert True
+        else: assert False
+
+    def test_nine(self):
+        assert self._pushy.deviceInfo('device_token_ok_fail')==None
+
+    def test_ten(self):
+        assert self._pushy.deviceInfo('device_token_bad_json')==None
