@@ -29,7 +29,7 @@ except OSError:
 
 setup(
     name="PushySDK",
-    version="0.1.2",
+    version="0.1.3",
     author="Rob Kent",
     author_email="jazzycamel@googlemail.com",
     description="A very simple Python client for the Pushy notification service API.",
