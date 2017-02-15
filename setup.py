@@ -18,7 +18,7 @@ class PyTest(TestCommand):
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-def makeLongDescription(self):
+def makeLongDescription():
     return pypandoc.convert_file('README.md', 'rst')
 
 try: long_description=makeLongDescription()
