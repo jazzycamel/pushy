@@ -24,8 +24,8 @@ def _processRequest(fn):
                 self._logger.error("Failed to parse JSON response: {0}".format(e))
                 return None
 
-        self._logger.error("Failed to get {0} for device(s): {1}, with HTTP Status Code: {2}"
-            .format(fn.__name__, tokens, request.status_code))
+        self._logger.error("Failed to get {0} for device(s): {1}, with HTTP Status Code: {2}. Response: {3}"
+            .format(fn.__name__, tokens, request.status_code, request.text))
         raise request.raise_for_status()
 
     return wrapper
